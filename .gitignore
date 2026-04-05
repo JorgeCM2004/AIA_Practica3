@@ -12,6 +12,12 @@ wheels/
 # Data
 data/
 results/
+Dataset_YOLO/
+images/
 
 # Testing
 prueba*
+
+#YOLO files
+*.pt
+runs

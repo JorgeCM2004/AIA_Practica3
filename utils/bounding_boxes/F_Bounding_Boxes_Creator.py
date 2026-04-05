@@ -41,6 +41,9 @@ class Bounding_Boxes_Creator:
 			if mask is None:
 				continue
 
+			if len(mask.shape) > 2:
+				mask = mask[:, :, 0]
+
 			y_indices, x_indices = np.where(mask > 0)
 
 			if len(x_indices) == 0 or len(y_indices) == 0:
@@ -49,7 +52,7 @@ class Bounding_Boxes_Creator:
 			x_min, x_max = np.min(x_indices), np.max(x_indices)
 			y_min, y_max = np.min(y_indices), np.max(y_indices)
 
-			h_img, w_img = mask.shape
+			h_img, w_img = mask.shape[:2]
 
 			x_center = ((x_min + x_max) / 2.0) / w_img
 			y_center = ((y_min + y_max) / 2.0) / h_img

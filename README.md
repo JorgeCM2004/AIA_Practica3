@@ -15,7 +15,7 @@ El código está organizado en distintos módulos para facilitar su lectura y ma
 │   ├── 📁 metrics
 │   │   └── 🐍 F_Metrics_Generator.py
 │   ├── 📁 models
-│   │   └── 🐍 F_Model_Manager.py
+│   │   └── 🐍 F_Classifier_Manager.py
 │   ├── 📁 preprocessing
 │   │   └── 🐍 F_Data_Preprocessor.py
 │   ├── 📁 splitter
