@@ -17,7 +17,7 @@ class YOLO_Model:
 			txt_src = os.path.join(bbox_dir, str(row["yolo_file"]))
 
 			img_dst = os.path.join(base_dir, "images", split, row["id_image"])
-			txt_name = row["id_image"].replace(".png", ".txt").replace(".jpg", ".txt")
+			txt_name = row["id_image"].replace(".png", ".txt")
 			txt_dst = os.path.join(base_dir, "labels", split, txt_name)
 
 			if os.path.exists(img_src) and os.path.exists(txt_src):
