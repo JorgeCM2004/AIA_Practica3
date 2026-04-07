@@ -1,6 +1,6 @@
-# Clasificación del Bienestar Fetal con Machine Learning
+# Práctica 3: Detección de Tumores en Ecografías con Visión Artificial
 
-Este proyecto utiliza algoritmos de Aprendizaje Automático (Random Forest, XGBoost, KNN y Regresión Logística) para clasificar el estado de salud fetal utilizando datos de cardiotocografías.
+Este proyecto utiliza modelos de Visión Artificial y Aprendizaje Profundo para analizar imágenes de ecografías médicas y clasificar la presencia de tumores como benignos o malignos y su posterior encapsulamiento en Bounding Boxes para mayor explicabilidad.
 
 Destaca por su diseño modular orientado a objetos y el uso de **[uv](https://github.com/astral-sh/uv)** para una gestión del entorno y dependencias ultrarrápida y reproducible.
 
@@ -10,14 +10,20 @@ El código está organizado en distintos módulos para facilitar su lectura y ma
 
 ```
 ├── 📁 utils
+│   ├── 📁 bounding_boxes
+│   │   ├── 🐍 F_Bounding_Boxes_Creator.py
+│   │   └── 🐍 F_YOLO_Model.py
+│   ├── 📁 classifiers
+│   │   ├── 🐍 F_CNN_Classifier.py
+│   │   ├── 🐍 F_Classifier_Manager.py
+│   │   └── 🐍 F_ResNet_Classifier.py
 │   ├── 📁 downloader
 │   │   └── 🐍 F_Data_Downloader.py
+│   ├── 📁 loaders
+│   │   ├── 🐍 F_Fetal_Ultrasound_Dataloader.py
+│   │   └── 🐍 F_Fetal_Ultrasound_Dataset.py
 │   ├── 📁 metrics
 │   │   └── 🐍 F_Metrics_Generator.py
-│   ├── 📁 models
-│   │   └── 🐍 F_Classifier_Manager.py
-│   ├── 📁 preprocessing
-│   │   └── 🐍 F_Data_Preprocessor.py
 │   ├── 📁 splitter
 │   │   └── 🐍 F_Data_Splitter.py
 │   └── 🐍 __init__.py
@@ -59,7 +65,7 @@ Para ejecutar el programa principal, descargar el dataset automáticamente y ent
 uv run main.py
 ```
 
-Una vez termine el proceso, podrás revisar la carpeta `results` (que se generará automáticamente en la raíz del proyecto) para ver los archivos de texto con las métricas cuantitativas y las imágenes `.png` con las matrices de confusión generadas por cada modelo.
+Una vez termine el proceso, podrás revisar la carpeta `results` (que se generará automáticamente en la raíz del proyecto) para ver los archivos de texto con las métricas cuantitativas y las imágenes `.png` con las matrices de confusión generadas por cada modelo de clasificación, además se generará una carpeta `YOLO` con imágenes `.png` pintando las predicciones del modelo.
 
 > ⚠️ **IMPORTANTE: Credenciales de Kaggle**
 >
